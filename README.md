@@ -23,31 +23,32 @@ Testing the webserver.
 
 ## PROGRAM:
 ``````
-from http.server import HTTPServer, BaseHTTPRequestHandler
-
+from http.server import HTTPServer, 
+BaseHTTPRequestHandler
 content = """
+<!doctype html>
 <html>
 <head>
+<title>Top Five </title>
 </head>
 <body>
-<h1>Welcome</h1>
+<h1>Top Five Web Application Development Frameworks</h1>
+<h3>1.Django</h3>
+<h3>2.MEAN Stock</h3>
+<h5>3.React</h5>
 </body>
-<html>
-"""
-class HelloHandler (BaseHTTPRequestHandler): 
-    def do_GET (self):
+</html>
+
+class HelloHandler (BaseHTTPRequestHandler):
+     def do_GET (self):
         self.send_response(200)
         self.send_header('Content-type', 'text/html; charset=utf-8')
-        self.end_headers ()
-        self.wfile.write(content.encode())  
+        self.end headers ()
+        self.wfile.write(content.encode())
         
 server_address = ('', 80)
-httpd = HTTPServer(server_address, HelloHandler)
+httpd = HTTPServer (server_address, HelloHandler)
 httpd.serve_forever()
-        
-
-    
-
 ``````
 ## OUTPUT:
 ![image](https://github.com/PRASHANTHRATHI/ODD2023-WT-Ex-01-Simple-Web-Server/assets/145743120/d546a18d-b845-4e1e-ac22-6e206ad56d54)
